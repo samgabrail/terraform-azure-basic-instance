@@ -13,3 +13,6 @@ ARM_TENANT_ID: tenant ID, aka tenant
 TF_WARN_OUTPUT_ERRORS: Set to 1, to avoid halting execution when the Azure compute module gives an expected error
 
 ## Terraform Variables Needed in your workspace
+username: username for windows machine to be created
+password: password for windows machine to be created
+
