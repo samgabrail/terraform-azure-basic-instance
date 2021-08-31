@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "2.74.0"
+    }
+  }
+}
+
 provider "azurerm" {
   features {}
 }
@@ -38,8 +47,8 @@ resource "azurerm_windows_virtual_machine" "main" {
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
   size                = "Standard_F2"
-  admin_username      = "adminuser"
-  admin_password      = "P@ssw0rd1234!"
+  admin_username      = var.username
+  admin_password      = var.password
   network_interface_ids = [
     azurerm_network_interface.main.id,
   ]
